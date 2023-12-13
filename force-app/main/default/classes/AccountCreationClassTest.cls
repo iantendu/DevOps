@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : 
  * @group             : 
- * @last modified on  : 12-13-2023
+ * @last modified on  : 12-14-2023
  * @last modified by  : 
 **/
 @isTest
@@ -10,7 +10,7 @@ private class AccountCreationClassTest {
 
     @isTest
     static void testCreateAccount() {
-        // Test data yes yes yes
+        // Test data yes yes yes yes
         String accountName = 'Test Account';
         String industry = 'Technology';
 
