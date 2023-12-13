@@ -14,12 +14,16 @@ private class AccountCreationClassTest {
         String accountName = 'Test Account';
         String industry = 'Technology';
 
-        // Test account creation
+        // Test account creation 5
         Test.startTest();
         AccountCreationClass.createAccount(accountName, industry);
         Test.stopTest();
 
+<<<<<<< HEAD
         // Verify that the account was created56
+=======
+        // Verify that the account was created 7
+>>>>>>> master
         List<Account> accounts = [SELECT Id, Name, Industry FROM Account WHERE Name = :accountName LIMIT 1];
         System.assertNotEquals(0, accounts.size(), 'Account should be created');
 
