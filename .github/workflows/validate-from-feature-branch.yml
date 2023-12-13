@@ -6,6 +6,8 @@ on:
       - synchronize
     paths:
       - force-app/**
+    branches:
+      - Development
 jobs:
   validate-with-uat:
     runs-on: ubuntu-latest
