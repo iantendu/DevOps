@@ -3,7 +3,7 @@ private class AccountCreationClassTest {
 
     @isTest
     static void testCreateAccount() {
-        // Test data
+        // Test data yes
         String accountName = 'Test Account';
         String industry = 'Technology';
 
