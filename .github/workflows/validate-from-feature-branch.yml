@@ -1,4 +1,4 @@
-name: validate from feature branch
+name: validate with uat
 on:
   pull_request:
     types:
@@ -6,10 +6,8 @@ on:
       - synchronize
     paths:
       - force-app/**
-    branches:
-      - master
 jobs:
-  validate-from-feature-branch:
+  validate-with-uat:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
@@ -33,9 +31,9 @@ jobs:
           ~/sfdx/bin/sfdx version
       - name: Populate auth file with SFDX_URL secret of target org
         run: |
-          echo ${{ secrets.}} > ./.txt
+          echo ${{ secrets.PROD_URL}} > ./PROD_URL.txt
       - name: Authenticate to target Org
-        run: sfdx auth:sfdxurl:store -f ./.txt -s -a targetOrg
+        run: sfdx auth:sfdxurl:store -f ./PROD_URL.txt -s -a targetOrg
       - name: Installing java
         run: sudo apt-get update && sudo apt-get install default-jdk
       - name: Installing SFDX scanner
