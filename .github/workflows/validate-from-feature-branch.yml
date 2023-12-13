@@ -7,7 +7,7 @@ on:
     paths:
       - force-app/**
     branches:
-      - main
+      - master
 jobs:
   validate-from-feature-branch:
     runs-on: ubuntu-latest

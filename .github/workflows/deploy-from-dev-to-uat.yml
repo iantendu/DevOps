@@ -4,7 +4,7 @@ on:
     paths:
       - force-app/**
     branches:
-      - main
+      - master
 jobs:
   deploy-from-dev-to-uat:
     runs-on: ubuntu-latest
