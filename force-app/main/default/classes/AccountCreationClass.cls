@@ -14,7 +14,7 @@ public class AccountCreationClass {
         
         try {
             insert newAccount;
-            System.debug('Account created successfully2: ' + newAccount.Id);
+            System.debug('Account created successfully25: ' + newAccount.Id);
         } catch (Exception e) {
             System.debug('Error creating account: ' + e.getMessage());
         }
