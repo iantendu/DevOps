@@ -20,7 +20,7 @@ private class AccountCreationClassTest {
         Test.stopTest();
 
         // Verify that the account was created56
-        List<Account> accounts = [SELECT Id, Name, Industry FROM Account WHERE Name = :accountName LIMIT 1];
+        List<Account> accounts = [SELECT Id, Name, Industry FROM Account WHERE Name = :accountName LIMIT 2];
         System.assertNotEquals(0, accounts.size(), 'Account should be created');
 
         // Verify the account details
