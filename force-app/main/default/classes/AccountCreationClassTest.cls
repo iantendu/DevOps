@@ -14,7 +14,7 @@ private class AccountCreationClassTest {
         String accountName = 'Test Account';
         String industry = 'Technology';
 
-        // Test account creation 5 6
+        // Test account creation 5 67
         Test.startTest();
         AccountCreationClass.createAccount(accountName, industry);
         Test.stopTest();
