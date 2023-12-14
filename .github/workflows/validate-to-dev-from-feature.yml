@@ -1,4 +1,8 @@
+<<<<<<< HEAD:.github/workflows/validate-from-feature-branch.yml
+name: validate with development
+=======
 name: validate to dev from feature
+>>>>>>> 846762523793327df3148ceff0991405962506c3:.github/workflows/validate-to-dev-from-feature.yml
 on:
   pull_request:
     types:
@@ -9,7 +13,11 @@ on:
     branches:
       - Development
 jobs:
+<<<<<<< HEAD:.github/workflows/validate-from-feature-branch.yml
+  validate-with-development:
+=======
   validate-to-dev-from-feature:
+>>>>>>> 846762523793327df3148ceff0991405962506c3:.github/workflows/validate-to-dev-from-feature.yml
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
@@ -33,9 +41,15 @@ jobs:
           ~/sfdx/bin/sfdx version
       - name: Populate auth file with SFDX_URL secret of target org
         run: |
+<<<<<<< HEAD:.github/workflows/validate-from-feature-branch.yml
+          echo ${{ secrets.PROD_URL}} > ./PROD_URL.txt
+      - name: Authenticate to target Org
+        run: sfdx auth:sfdxurl:store -f ./PROD_URL.txt -s -a targetOrg
+=======
           echo ${{ secrets.DEV_URL}} > ./DEV_URL.txt
       - name: Authenticate to target Org
         run: sfdx auth:sfdxurl:store -f ./DEV_URL.txt -s -a targetOrg
+>>>>>>> 846762523793327df3148ceff0991405962506c3:.github/workflows/validate-to-dev-from-feature.yml
       - name: Deployment - run all tests
         run: >
           sfdx force:source:deploy -p "force-app" --checkonly --testlevel
