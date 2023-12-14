@@ -10,7 +10,7 @@ private class AccountCreationClassTest {
 
     @isTest
     static void testCreateAccount() {
-        // Test data yes yes yes yesir
+        // Test data yes yes yes yesir 45
         String accountName = 'Test Account';
         String industry = 'Technology';
 
@@ -19,7 +19,7 @@ private class AccountCreationClassTest {
         AccountCreationClass.createAccount(accountName, industry);
         Test.stopTest();
 
-        // Verify that the account was created56
+        // Verify that the account was created565
         List<Account> accounts = [SELECT Id, Name, Industry FROM Account WHERE Name = :accountName LIMIT 1];
         System.assertNotEquals(0, accounts.size(), 'Account should be created');
 
