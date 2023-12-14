@@ -1,8 +1,4 @@
-<<<<<<< HEAD:.github/workflows/validate-from-feature-branch.yml
 name: validate with development
-=======
-name: validate to dev from feature
->>>>>>> 846762523793327df3148ceff0991405962506c3:.github/workflows/validate-to-dev-from-feature.yml
 on:
   pull_request:
     types:
@@ -13,11 +9,7 @@ on:
     branches:
       - Development
 jobs:
-<<<<<<< HEAD:.github/workflows/validate-from-feature-branch.yml
   validate-with-development:
-=======
-  validate-to-dev-from-feature:
->>>>>>> 846762523793327df3148ceff0991405962506c3:.github/workflows/validate-to-dev-from-feature.yml
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
