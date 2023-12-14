@@ -1,12 +1,15 @@
-name: Deploy from dev to uat
+name: validate to uat from dev
 on:
-  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
     paths:
       - force-app/**
     branches:
-      - master
+      - UAT
 jobs:
-  deploy-from-dev-to-uat:
+  validate-to-uat-from-dev:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
@@ -30,9 +33,10 @@ jobs:
           ~/sfdx/bin/sfdx version
       - name: Populate auth file with SFDX_URL secret of target org
         run: |
-          echo ${{ secrets.PROD_URL}} > ./PROD_URL.txt
+          echo ${{ secrets.UAT_URL}} > ./UAT_URL.txt
       - name: Authenticate to target Org
-        run: sfdx auth:sfdxurl:store -f ./PROD_URL.txt -s -a targetOrg
+        run: sfdx auth:sfdxurl:store -f ./UAT_URL.txt -s -a targetOrg
       - name: Deployment - run all tests
         run: >
-          sfdx force:source:deploy -p "force-app"  --testlevel RunLocalTests --json
+          sfdx force:source:deploy -p "force-app" --checkonly --testlevel
+          RunLocalTests --json
