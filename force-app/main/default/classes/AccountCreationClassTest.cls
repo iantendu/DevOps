@@ -10,7 +10,7 @@ private class AccountCreationClassTest {
 
     @isTest
     static void testCreateAccount() {
-        // Test data yes yes yes
+        // Test data yes yes yes yesir
         String accountName = 'Test Account';
         String industry = 'Technology';
 
