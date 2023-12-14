@@ -10,11 +10,11 @@ private class AccountCreationClassTest {
 
     @isTest
     static void testCreateAccount() {
-        // Test data yes yes yes yesir test
+        // Test data yes yes yes yesir 45
         String accountName = 'Test Account';
         String industry = 'Technology';
 
-        // Test account creation 5 67
+        // Test account creation 5 6
         Test.startTest();
         AccountCreationClass.createAccount(accountName, industry);
         Test.stopTest();
