@@ -16,7 +16,7 @@ private class AccountCreationClassTest {
 
         // Test account creation 5 6
         Test.startTest();
-        //AccountCreationClass.createAccount(accountName, industry);
+        AccountCreationClass.createAccount(accountName, industry);
         Test.stopTest();
 
         // Verify that the account was created56
